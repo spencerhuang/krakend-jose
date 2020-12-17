@@ -76,7 +76,7 @@ func TokenSignatureValidator(hf ginkrakend.HandlerFactory, logger logging.Logger
 		handler := hf(cfg, prxy)
 		scfg, err := krakendjose.GetSignatureConfig(cfg)
 		if err == krakendjose.ErrNoValidatorCfg {
-			logger.Info("JOSE: validator disabled for the endpoint", cfg.Endpoint)
+			logger.Info("JOSE: validator disabled for the endpoint spencer build test", cfg.Endpoint)
 			return handler
 		}
 		if err != nil {
@@ -97,7 +97,7 @@ func TokenSignatureValidator(hf ginkrakend.HandlerFactory, logger logging.Logger
 			aclCheck = krakendjose.CanAccess
 		}
 
-		logger.Info("JOSE: validator enabled for the endpoint", cfg.Endpoint)
+		logger.Info("JOSE: validator enabled for the endpoint spencer build test", cfg.Endpoint)
 
 		return func(c *gin.Context) {
 			token, err := validator.ValidateRequest(c.Request)
